@@ -15,7 +15,7 @@
     <h4>Task description</h4>
     <div class="input-append">
     <input class ="inputTask" maxlength="80" placeholder="Please enter a task description" type="text" class="form-control" #newTodo required />
-    <button class="buttonTask" (click)="addTodo(newTodo.value); newTodo.value=''"  [disabled]="task === ''" type="button" style="margin-top:10px; height:40px;" class="btn btn-primary form-control" >Add task</button>
+    <button class="buttonTask" (click)="addTodo(newTodo.value); newTodo.value=''"  type="button" style="margin-top:10px; height:40px;" class="btn btn-primary form-control" >Add task</button>
   
   </div>
   </form>
