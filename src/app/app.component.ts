@@ -17,7 +17,7 @@ export class AppComponent {
   
   todos = [
     {
-      label: 'Finish new page layout',
+      label: 'Work on app design',
     },
     {
       label: 'Display error messages',
@@ -31,6 +31,8 @@ export class AppComponent {
     var newTodo = {
       label: newTodoLabel
     };
+
+
 
     if(newTodo.label == '') {  
       

@@ -1,0 +1,18 @@
+.container {
+    max-width:890px;
+}
+
+.inputTask{
+    display: block;
+    float: left;
+    height: 32px;
+    width: 100px;
+}
+
+.buttonTask{
+    display: block;
+    float: left;
+    height: 40px;
+    margin: -1px -2px -2px;
+    width: 41px;
+}
