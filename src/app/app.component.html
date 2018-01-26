@@ -4,17 +4,31 @@
     <h4>Task Creator & Organizer</h4>
   </div>
 
-  <div class="panel panel-primary">
-<div class="panel-heading">ToDoIt</div>
+  
+  <div class="panel panel-default">
+<div class="panel-heading">My tasks</div>
 <div class="panel-body">
 
+  
+
+  
+
+
+
+<div style="font-size:18px; border-radius:5px; text-align:center; " class="alert-danger">
+    {{errorMessage}}
+  </div>
+   
+  
     <h3>Add new task</h3>
     <div class="mt-2 col-md-12">
+      
   </div>
   <form #formCtrl="ngForm">
-    <h4>Task description</h4>
+   
     <div class="input-append">
     <input class ="inputTask" maxlength="80" placeholder="Please enter a task description" type="text" class="form-control" #newTodo required />
+    
     <button class="buttonTask" (click)="addTodo(newTodo.value); newTodo.value=''"  type="button" style="margin-top:10px; height:40px;" class="btn btn-primary form-control" >Add task</button>
   
   </div>
@@ -22,7 +36,7 @@
 
 
 
-  <div style="margin-top:40px;"  class="panel panel-default">
+  <div style="margin-top:40px;"  class="panel panel-primary">
       <div class="panel-heading">Open Tasks</div>
       <div class="panel-body">
     <table  class="table table-responsive">
@@ -36,7 +50,8 @@
         <tbody>
           <tr *ngFor="let todo of todos">
             <td>
-              <p>{{todo.label}}</p>
+              <p>{{todo.label}} </p>
+             
             </td>
             
             <td><button style="float:right;" class="btn btn-danger" (click)="deleteTodo(todo)">Delete</button></td>
@@ -44,10 +59,13 @@
           </tr>
         </tbody>
       </table>
-</div>
+      <div style=" color:grey; font-size:16px; margin-left:10px;"><p>{{infoMessage}}</p></div>
 </div>
 
-<div style="margin-top:40px;"  class="panel panel-default">
+
+</div>
+
+<div style="margin-top:40px;"  class="panel panel-primary">
   <div class="panel-heading">Resolved Tasks</div>
   <div class="panel-body">
 <table  class="table table-responsive">
@@ -67,6 +85,7 @@
       </tr>
     </tbody>
   </table>
+
 </div>
 </div>
 
@@ -76,9 +95,9 @@
 
 
   <div class="panel panel-info">
-    <div class="panel-heading">About</div>
+    <div class="panel-heading">About ToDoIt</div>
     <div class="panel-body">
-      <p>{{title}}</p>
+      <p>A simple task management tool made with Angular 2</p>
       <p>Version {{version}}</p>
       <p>Created by Jeremy Püringer</p>
     </div>
