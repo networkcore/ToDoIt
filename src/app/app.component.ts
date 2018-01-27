@@ -20,7 +20,7 @@ export class AppComponent {
   
   todos = [
     {
-      label: 'Add more task attributes'
+      label: 'Add more task attributes',
     }
   ];
 
@@ -31,16 +31,15 @@ export class AppComponent {
     var newTodo = {
       label: newTodoLabel
     };
+
+    var isSame = this.todos.some(function(o){
+      return o.label.toLowerCase() === newTodoLabel.toLowerCase();
+    });
    
     
     if(newTodo.label == '') {  
       this.errorMessage = "Task description can't be empty";
    } else {
-
-    var isSame = this.todos.some(function(o){
-      return o.label.toLowerCase() === newTodoLabel.toLowerCase();
-    });
-
     if(isSame) {
       this.errorMessage = 'Task already exists'
     } else {
@@ -54,6 +53,7 @@ export class AppComponent {
     
   }
 
+  
 
   resolveTodo(newTodoLabel, todo) {
     var newTodo = {
@@ -61,9 +61,8 @@ export class AppComponent {
     };
 
     this.resolvedtodos.unshift(newTodo);
-    this.todos.splice(todo, 1);
-    this.errorMessage = ''; 
-    this.infoMessage = "";
+
+    this.todos = this.todos.filter( t => t.label !== todo.label);
 
     if(this.todos.length)
     {

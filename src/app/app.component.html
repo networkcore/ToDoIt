@@ -29,8 +29,7 @@
     <div class="input-append">
     <input class ="inputTask" maxlength="80" placeholder="Please enter a task description" type="text" class="form-control" #newTodo required />
     
-    <button class="buttonTask" (click)="addTodo(newTodo.value); newTodo.value=''"  type="button" style="margin-top:10px; height:40px;" class="btn btn-primary form-control" >Add task</button>
-  
+    <button class="buttonTask" (click)="addTodo(newTodo.value); newTodo.value='';"  type="button" style="margin-top:10px; height:40px;" class="btn btn-primary form-control" >Add task</button>  
   </div>
   </form>
 
@@ -55,7 +54,7 @@
             </td>
             
             <td><button style="float:right;" class="btn btn-danger" (click)="deleteTodo(todo)">Delete</button></td>
-            <td width="5%"><button (click)="resolveTodo(todo.label);"  style="float:right;" class="btn btn-success">Resolve</button></td>
+            <td width="5%"><button (click)="resolveTodo(todo.label, todo)"  style="float:right;" class="btn btn-success">Resolve</button></td>
           </tr>
         </tbody>
       </table>
